@@ -1,4 +1,4 @@
-# 🍄 Mushroom (--Better-Sliders)
+# 🍄 Mushroom (--Better-Sliders) 
 
 <!-- [![hacs][hacs-badge]][hacs-url]
 [![release][release-badge]][release-url]
@@ -10,6 +10,8 @@
 ![Overview](https://raw.githubusercontent.com/phischdev/lovelace-mushroom-better-sliders/master/.github/images/readme_image.png)
 
 ## What is mushroom-better-sliders?
+### This is a fix for colour temperature control which was a breaking change in HAOS a while back
+
 This is a fork of the fantastic [Mushrooms UI Cards][original-repo] by piitaya, a collection of cards for [Home Assistant][home-assistant] Dashboard UI.
 
 > :warning: **This mod will not work, if you still have the original Mushroom installed**
