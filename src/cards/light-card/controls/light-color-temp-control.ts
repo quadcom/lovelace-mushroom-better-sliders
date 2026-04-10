@@ -15,7 +15,7 @@ export class LightColorTempControl extends LitElement {
 
         this.hass.callService("light", "turn_on", {
             entity_id: this.entity.entity_id,
-            color_temp: value,
+            color_temp_kelvin: value,
         });
     }
 
@@ -27,8 +27,8 @@ export class LightColorTempControl extends LitElement {
                 .value=${colorTemp}
                 .disabled=${!isAvailable(this.entity)}
                 .inactive=${!isActive(this.entity)}
-                .min=${this.entity.attributes.min_mireds ?? 0}
-                .max=${this.entity.attributes.max_mireds ?? 100}
+                .min=${this.entity.attributes.min_color_temp_kelvin ?? 2000}
+                .max=${this.entity.attributes.max_color_temp_kelvin ?? 6500}
                 .showIndicator=${true}
                 @change=${this.onChange}
             />
@@ -38,7 +38,7 @@ export class LightColorTempControl extends LitElement {
     static get styles(): CSSResultGroup {
         return css`
             mushroom-slider {
-                --gradient: -webkit-linear-gradient(right, rgb(255, 160, 0) 0%, white 100%);
+                --gradient: -webkit-linear-gradient(right, white 0%, rgb(255, 160, 0) 100%);
             }
         `;
     }

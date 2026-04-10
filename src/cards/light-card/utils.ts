@@ -8,9 +8,13 @@ export function getBrightness(entity: LightEntity): number | undefined {
 }
 
 export function getColorTemp(entity: LightEntity): number | undefined {
-    return entity.attributes.color_temp != null
-        ? Math.round(entity.attributes.color_temp)
-        : undefined;
+    if (entity.attributes.color_temp_kelvin != null) {
+        return Math.round(entity.attributes.color_temp_kelvin);
+    }
+    if (entity.attributes.color_temp != null) {
+        return Math.round(1_000_000 / entity.attributes.color_temp);
+    }
+    return undefined;
 }
 
 export function getRGBColor(entity: LightEntity): number[] | undefined {
